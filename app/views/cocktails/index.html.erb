@@ -1,11 +1,11 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://cdn.pixabay.com/photo/2015/01/09/11/27/cocktail-594173_960_720.jpg);">
     <div class="container d-flex justify-content-center flex-column">
         <div>
-            <h1 class="mb-5"><strong>Cocktailpedia</strong>!</h1>
-            <p>The best cocktail recipes out there....</p>
+            <h1><strong>Cocktailpedia</strong>!</h1>
+            <h4 class="mb-3 pb-5">The best cocktail recipes out there...</h4>
             <!-- <a class="btn btn-flat" href="/cocktails">Explore now</a> -->
             <%= simple_form_for :search, url: search_path, method:'GET', html: {class: 'form-inline'} do |f| %>
-            <%= f.input :name, label: "",  input_html: {id: "banner-typed-text"} %>
+            <%= f.input :name, label: false, required: false, input_html: {id: "banner-typed-text"} %>
             <%= f.submit "Search", class: "btn btn-primary" %>
             <% end %>
         </div>
@@ -17,7 +17,7 @@
 <div class="cards m-2">
         <% @cocktails.each do |cocktail| %>
         <div data-aos="zoom-in" data-aos-delay="50" data-aos-duration="1000">
-        <div class="card-category m-2" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.abeautifulmess.com/uploads/2019/07/mojito-recipe-1-1.jpg)">
+        <div class="card-category m-2" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cocktail.image_url %>)">
             <%= link_to cocktail.name, cocktail_path(cocktail) %>
         </div>
     </div>
