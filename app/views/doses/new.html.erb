@@ -5,7 +5,7 @@
             <%= simple_form_for [@cocktail, @dose] do |f| %>
             <%= f.input :description %>
             <%= f.association :ingredient, collection: Ingredient.order(:name), input_html: { class: 'select2' } %>
-            <%= f.submit %>
+            <%= f.button :submit, "Add ingredient", class: "btn btn-flat" %>
             <% end %>
         </div>
     </div>
