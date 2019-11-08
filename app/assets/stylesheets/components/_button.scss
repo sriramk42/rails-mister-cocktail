@@ -2,6 +2,23 @@
   color: black;
   padding: 8px 24px;
   border-radius: 4px;
-  background: #beebe9;
+  background: #eaf6f6;
   transition: background 0.3s ease;
+}
+
+.btn-search {
+  background: #eaf6f6;
+  border: none;
+  color: black;
+  padding: 7px;
+}
+
+.btn-search:hover {
+  background: #9aeded;
+  color: black;
+}
+
+.btn-flat:hover {
+  background: #9aeded;
+  color: black;
 }

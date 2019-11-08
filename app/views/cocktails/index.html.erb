@@ -5,8 +5,8 @@
             <h4 class="mb-3 pb-5">The best cocktail recipes out there...</h4>
             <!-- <a class="btn btn-flat" href="/cocktails">Explore now</a> -->
             <%= simple_form_for :search, url: search_path, method:'GET', html: {class: 'form-inline'} do |f| %>
-            <%= f.input :name, label: false, required: false, input_html: {id: "banner-typed-text"} %>
-            <%= f.submit "Search", class: "btn btn-primary" %>
+            <%= f.input :name, label: false, required: false, input_html: {id: "banner-typed-text", class: "search-input"} %>
+            <%= f.submit "Search", class: "btn btn-primary btn-search ml-2" %>
             <% end %>
         </div>
     </div>
