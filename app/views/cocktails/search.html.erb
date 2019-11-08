@@ -1,8 +1,27 @@
 <div class="container">
-
-<h1>Search Results</h1>
-
-<% @cocktails.each do |cocktail| %>
-<%= cocktail.name %>
-<% end %>
+    <div class="row justify-content-center text-center m-5">
+        <div class="col-12">
+            <h1>Search Results</h1>
+        </div>
+    </div>
+    <% if @cocktails.empty? %>
+    <div class="row justify-content-center text-center m-5">
+        <div class="col-6">
+            <div class="d-flex justify-content-center align-items-center">
+                <h3>No results found</h3>
+            </div>
+        </div>
+    </div>
+    <% else %>
+    <% @cocktails.each do |cocktail| %>
+    <div class="row justify-content-center text-center m-5">
+        <div class="col-6">
+            <div class="d-flex justify-content-center align-items-center">
+                <h3> <%= link_to cocktail.name, cocktail_path(cocktail) %></h3>
+<%= cl_image_tag cocktail.photo, height: 100, width: 200, crop: :fit, class: "m-2" %>
+            </div>
+        </div>
+    </div>
+    <% end %>
+    <% end %>
 </div>
