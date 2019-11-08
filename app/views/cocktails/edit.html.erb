@@ -1,0 +1,12 @@
+<div class="container mt-3">
+    <h1 class="text-center mb-3">Edit <%= @cocktail.name %> </h1>
+    <div class="row mt-3 justify-content-center pt-3">
+        <div class="col-6">
+            <%= simple_form_for(@cocktail) do |f| %>
+            <%= f.input :name %>
+            <%= f.input :photo%>
+            <%= f.button :submit, "Submit", class: "btn btn-flat" %>
+            <% end %>
+        </div>
+    </div>
+</div>
